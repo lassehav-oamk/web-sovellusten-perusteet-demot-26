@@ -4,12 +4,26 @@
 
 export function getBySensor(cameras, sensor) {
   // TODO: palauta vain kamerat, joiden sensor-kenttä vastaa parametria.
-  return [];
+
+  // haetaan kaikki kamerat joiden sensori on APS-C (sensor parametrin arvo esimerkissä)
+  let searchResults = [];
+
+  // for(let i = 0; i < cameras.length; i++)
+  // {
+  //   const sensorType = cameras[i].sensor;
+  //   if(sensorType === "APS-C")
+  //   {
+  //     // löytyi
+  //     searchResults.push(cameras[i]);
+  //   }
+  // }
+  searchResults = cameras.filter(camera => camera.sensor === sensor);
+
+  return searchResults;
 }
 
 export function getInStock(cameras) {
-  // TODO: palauta vain varastossa olevat kamerat.
-  return [];
+  return cameras.filter(camera => camera.inStock);
 }
 
 export function sortByPrice(cameras, order = "asc") {
@@ -26,7 +40,16 @@ export function getAveragePrice(cameras) {
 export function toDisplayObjects(cameras) {
   // TODO: muunna kamerat muotoon:
   // { id, title: "Brand Model", details: "Sensor, video, €price", rating }
-  return [];
+  return cameras.map(
+    kamera => {
+      return {
+        id: kamera.id,
+        title: kamera.brand + " " + kamera.model,
+        details: kamera.sensor + ", " + kamera.video + ", €" + kamera.price,
+        rating: kamera.rating
+      }
+    }
+  );
 }
 
 export function getBestAffordable(cameras, maxPrice) {
