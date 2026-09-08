@@ -1,0 +1,22 @@
+export const cameras = [
+  { id: 1, brand: "Canon", model: "EOS R50", sensor: "APS-C", price: 799, megapixels: 24, video: "4K", inStock: true, rating: 4.5 },
+  { id: 2, brand: "Nikon", model: "Z30", sensor: "APS-C", price: 749, megapixels: 21, video: "4K", inStock: true, rating: 4.2 },
+  { id: 3, brand: "Sony", model: "A6400", sensor: "APS-C", price: 929, megapixels: 24, video: "4K", inStock: false, rating: 4.6 },
+  { id: 4, brand: "Fujifilm", model: "X-S20", sensor: "APS-C", price: 1399, megapixels: 26, video: "6K", inStock: true, rating: 4.8 },
+  { id: 5, brand: "Panasonic", model: "G100", sensor: "Micro Four Thirds", price: 599, megapixels: 20, video: "4K", inStock: true, rating: 4.0 },
+  { id: 6, brand: "Olympus", model: "OM-D E-M10 IV", sensor: "Micro Four Thirds", price: 699, megapixels: 20, video: "4K", inStock: false, rating: 4.3 },
+  { id: 7, brand: "Canon", model: "EOS R8", sensor: "Full Frame", price: 1799, megapixels: 24, video: "4K", inStock: true, rating: 4.7 },
+  { id: 8, brand: "Nikon", model: "Z5", sensor: "Full Frame", price: 1599, megapixels: 24, video: "4K", inStock: true, rating: 4.4 },
+  { id: 9, brand: "Sony", model: "A7 IV", sensor: "Full Frame", price: 2799, megapixels: 33, video: "4K", inStock: false, rating: 4.9 },
+  { id: 10, brand: "Fujifilm", model: "GFX 50S II", sensor: "Medium Format", price: 3999, megapixels: 51, video: "Full HD", inStock: true, rating: 4.6 },
+  { id: 11, brand: "Leica", model: "Q3", sensor: "Full Frame", price: 5990, megapixels: 60, video: "8K", inStock: false, rating: 4.7 },
+  { id: 12, brand: "Panasonic", model: "S5 II", sensor: "Full Frame", price: 2199, megapixels: 24, video: "6K", inStock: true, rating: 4.6 },
+  { id: 13, brand: "Sony", model: "ZV-E10", sensor: "APS-C", price: 679, megapixels: 24, video: "4K", inStock: true, rating: 4.1 },
+  { id: 14, brand: "Canon", model: "PowerShot G7 X III", sensor: "1-inch", price: 699, megapixels: 20, video: "4K", inStock: true, rating: 4.0 },
+  { id: 15, brand: "Ricoh", model: "GR III", sensor: "APS-C", price: 999, megapixels: 24, video: "Full HD", inStock: false, rating: 4.5 },
+  { id: 16, brand: "Nikon", model: "Z8", sensor: "Full Frame", price: 4599, megapixels: 45, video: "8K", inStock: true, rating: 4.9 },
+  { id: 17, brand: "OM System", model: "OM-5", sensor: "Micro Four Thirds", price: 1299, megapixels: 20, video: "4K", inStock: true, rating: 4.4 },
+  { id: 18, brand: "Fujifilm", model: "X100VI", sensor: "APS-C", price: 1799, megapixels: 40, video: "6K", inStock: false, rating: 4.8 },
+  { id: 19, brand: "Sony", model: "RX100 VII", sensor: "1-inch", price: 1299, megapixels: 20, video: "4K", inStock: true, rating: 4.2 },
+  { id: 20, brand: "Canon", model: "EOS R10", sensor: "APS-C", price: 999, megapixels: 24, video: "4K", inStock: true, rating: 4.3 }
+];
