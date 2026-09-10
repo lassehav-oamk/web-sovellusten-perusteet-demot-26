@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 – Tuotekortin nappi</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <section class="instructions">
+    <h1>03 – Event listener createElementillä luodulle elementille</h1>
+    <p><strong>Mitä tehdään?</strong> Luodaan JavaScriptillä tuotekortti ja siihen nappi. Napin painaminen muuttaa korttia.</p>
+    <p><strong>Tavoite:</strong> Yhdistää edellisen tunnin createElement-osaaminen tapahtumankäsittelyyn.</p>
+    <h2>Tärkeimmät DOM-asiat</h2>
+    <ul>
+      <li><code>document.createElement()</code> luo uuden elementin muistiin.</li>
+      <li><code>textContent</code> asettaa elementin tekstin.</li>
+      <li><code>append()</code> liittää luodun elementin osaksi DOM-puuta.</li>
+      <li><code>addEventListener()</code> toimii myös JavaScriptillä luodulle elementille.</li>
+      <li><code>classList.toggle()</code> lisää CSS-luokan, jos sitä ei ole, ja poistaa sen, jos se on jo olemassa.</li>
+    </ul>
+  </section>
+
+  <div id="products"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

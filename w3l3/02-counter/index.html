@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 – Laskuri</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <section class="instructions">
+    <h1>02 – Tapahtuma muuttaa sovelluksen tilaa</h1>
+    <p><strong>Mitä tehdään?</strong> Rakennetaan laskuri, jonka arvo kasvaa aina nappia painettaessa.</p>
+    <p><strong>Tavoite:</strong> Huomata ero JavaScript-muuttujassa olevan tiedon ja selaimessa näkyvän DOM-sisällön välillä.</p>
+    <h2>Tärkeimmät DOM-asiat</h2>
+    <ul>
+      <li><code>document.querySelector()</code> hakee napin ja laskurin DOM:sta.</li>
+      <li><code>addEventListener()</code> suorittaa käsittelijän jokaisella klikkauksella.</li>
+      <li><code>textContent</code> päivittää käyttäjälle näkyvän arvon.</li>
+      <li>Muuttuja <code>count</code> säilyttää laskurin varsinaisen tilan JavaScriptissä.</li>
+    </ul>
+  </section>
+
+  <button id="button">Lisää</button>
+  <p>Laskurin arvo: <span id="counter">0</span></p>
+
+  <script src="app.js"></script>
+</body>
+</html>

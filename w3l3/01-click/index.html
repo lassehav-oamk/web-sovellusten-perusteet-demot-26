@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 – Click-tapahtuma</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <section class="instructions">
+    <h1>01 – Ensimmäinen event listener</h1>
+    <p><strong>Mitä tehdään?</strong> Kuunnellaan napin click-tapahtumaa ja muutetaan sivulla olevaa tekstiä.</p>
+    <p><strong>Tavoite:</strong> Ymmärtää addEventListener-metodin perusrakenne ja se, että tapahtuman käsittelijässä voidaan käyttää tuttuja DOM-operaatioita.</p>
+    <h2>Tärkeimmät DOM-asiat</h2>
+    <ul>
+      <li><code>document.querySelector()</code> hakee ensimmäisen CSS-valitsinta vastaavan elementin.</li>
+      <li><code>element.addEventListener("click", ...)</code> rekisteröi funktion, joka suoritetaan klikkauksen tapahtuessa.</li>
+      <li><code>element.textContent</code> lukee tai muuttaa elementin tekstisisältöä.</li>
+    </ul>
+  </section>
+
+  <button id="button">Paina minua</button>
+  <p id="message">Ei vielä painettu.</p>
+
+  <script src="app.js"></script>
+</body>
+</html>

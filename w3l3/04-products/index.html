@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 – Useita tuotteita</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <section class="instructions">
+    <h1>04 – Sama tapahtumankäsittely useille tuotteille</h1>
+    <p><strong>Mitä tehdään?</strong> Luodaan taulukon jokaisesta tuotteesta oma DOM-elementti ja jokaiselle kortille oma nappi.</p>
+    <p><strong>Tavoite:</strong> Soveltaa createElement-, append- ja addEventListener-osaamista toistuvaan dataan.</p>
+    <h2>Tärkeimmät DOM-asiat</h2>
+    <ul>
+      <li><code>document.querySelector()</code> hakee listan kohde-elementin.</li>
+      <li><code>document.createElement()</code> luo jokaiselle tuotteelle omat elementit.</li>
+      <li><code>append()</code> rakentaa elementtien väliset suhteet DOM-puuhun.</li>
+      <li><code>addEventListener()</code> voidaan rekisteröidä jokaiselle luodulle napille.</li>
+      <li>Event listenerin callback pääsee käsiksi samalla kierroksella luotuun tuotteeseen ja korttiin.</li>
+    </ul>
+    <p>Tässä vaiheessa emme vielä tarvitse event delegationia. Tarkoitus on ymmärtää ensin suora tapahtumankäsittely.</p>
+  </section>
+
+  <div id="products"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
