@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 – Tuotteiden suodatus</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <section class="instructions">
+    <h1>05 – Tuotteiden suodatus</h1>
+    <p><strong>Mitä tehdään?</strong> Suodatetaan harjoituksen 04-products tuotteita hakukenttään kirjoitetun tekstin perusteella.</p>
+    <p><strong>Valmiina:</strong> Tuotetaulukko, tuotteet näyttävä <code>render</code>-funktio ja hakukentän <code>input</code>-tapahtumankäsittelijä. Aluksi kaikki tuotteet näkyvät, mutta haku ei vielä suodata niitä.</p>
+    <h2>Tehtävä</h2>
+    <ol>
+      <li>Täydennä <code>app.js</code>-tiedoston tapahtumankäsittelijä. Muodosta uusi taulukko tuotteista, joiden nimi sisältää hakutekstin.</li>
+      <li>Tee hausta riippumaton isoista ja pienistä kirjaimista.</li>
+      <li>Kutsu <code>render</code>-funktiota suodatetulla taulukolla. Säilytä alkuperäinen <code>products</code>-taulukko, jotta hakua voi muuttaa ja tyhjentää.</li>
+    </ol>
+    <p><strong>Vihje:</strong> Tutustu metodeihin <code>filter()</code>, <code>toLowerCase()</code> ja <code>includes()</code>.</p>
+    <p><strong>Kokeile:</strong> Haku <code>phone</code> näyttää tuotteet Phone ja Headphones. Myös <code>PHONE</code> näyttää samat tuotteet. Tyhjä haku näyttää kaikki tuotteet, ja haku <code>xyz</code> tyhjentää tuotelistan.</p>
+  </section>
+
+  <label for="filter">Hae tuotteen nimellä:</label>
+  <input id="filter" type="text" placeholder="Esimerkiksi phone">
+
+  <div id="products"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
