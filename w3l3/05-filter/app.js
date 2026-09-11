@@ -37,10 +37,15 @@ function render(productsToRender) {
 filterInput.addEventListener("input", (event) => {
   const searchText = event.target.value;
 
+  console.log('Input event');
+  console.log(searchText);
+
   // TEHTÄVÄ:
   // 1. Suodata products-taulukosta tuotteet, joiden title sisältää searchTextin.
   // 2. Huomioi isot ja pienet kirjaimet sekä hakutekstissä että tuotteen nimessä.
   // 3. Kutsu render-funktiota suodatetulla taulukolla.
+  const suodatetutTuotteet = products.filter(p => p.title.includes(searchText));
+  render(suodatetutTuotteet);
 });
 
 render(products);

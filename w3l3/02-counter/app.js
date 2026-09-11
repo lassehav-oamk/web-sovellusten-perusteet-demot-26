@@ -7,3 +7,9 @@ let count = 0;
 // Lisää click-event listener.
 // Kasvata count-muuttujaa yhdellä.
 // Päivitä counter-elementin textContent.
+
+button.addEventListener('click', () => {
+    //console.log(count++);
+    count++;
+    counter.textContent = count;
+});

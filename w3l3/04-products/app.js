@@ -24,3 +24,34 @@ const productsElement = document.querySelector("#products");
 //
 // Lisää napille click-event listener.
 // Napin painaminen saa vaikuttaa vain kyseiseen tuotekorttiin.
+
+function createProduct(product) {
+  const container = document.createElement("div");
+  container.className = "product";
+
+  const title = document.createElement("div");
+  title.textContent = product.title;
+
+  const price = document.createElement("div");
+  price.textContent = product.price + " €";
+
+  container.append(title);
+  container.append(price);
+  productsElement.append(container);
+
+  const elementButton = document.createElement('button');
+  elementButton.textContent = "Suosikki"
+  container.append(elementButton);
+
+  elementButton.addEventListener('click', () => {
+    console.log('click');
+    container.classList.toggle("favorite");
+  });
+}
+
+// silmukka jolla kelataan products taulukko läpi ja jokaiselle
+// kutsutaan yo funktio
+for(const product of products) {
+  //console.log(product)
+  createProduct(product)
+}

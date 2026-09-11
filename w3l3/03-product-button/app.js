@@ -25,3 +25,14 @@ productsElement.append(container);
 // 3. Liitä button container-elementtiin.
 // 4. Lisää buttonille click-event listener.
 // 5. Muuta napin tekstiä tai käytä container.classList.toggle("favorite").
+
+
+const elementButton = document.createElement('button');
+elementButton.textContent = "Suosikki"
+container.append(elementButton);
+
+// 4
+elementButton.addEventListener('click', () => {
+  console.log('click');
+  container.classList.toggle("favorite");
+});
