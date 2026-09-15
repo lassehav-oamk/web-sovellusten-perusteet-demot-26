@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Page</title>
+    </head>
+    <body>
+        <div id="test">Test</div>
+
+
+        <script>
+            //document.getElementById("test").innerHTML = "<h1>Hello World!</h1>";
+            document.getElementById("test").textContent = "<h1>Hello World!</h1>";
+
+             function createCameraCard(camera) {
+                const article = document.createElement('article');
+                article.classList.add('camera-card');
+
+                const title = document.createElement('h2');
+                title.textContent = camera.model;
+                article.append(title);
+                return article;
+             }
+
+            let cameras = [
+                {
+                    model: "Canon EOS R5",
+                },
+                {
+                    model: "Nikon Z7 II",
+                },
+                {
+                    model: "Sony A7R IV",
+                }
+            ]
+
+            const cameraContainer = document.createElement('div');
+            cameraContainer.classList.add('camera-container');
+            for (const camera of cameras) {
+                const cameraCard = createCameraCard(camera);
+                cameraContainer.append(cameraCard);
+            }
+
+            document.body.append(cameraContainer);
+        </script>
+    </body>
+</html>

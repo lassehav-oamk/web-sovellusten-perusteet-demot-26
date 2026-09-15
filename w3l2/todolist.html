@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            .list-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script>
+            // list data 
+            let list = [
+                {
+                    id: 1,
+                    text: "Learn JavaScript",
+                    completed: false
+                },
+                {
+                    id: 2,
+                    text: "Build a to-do list app",
+                    completed: false
+                },
+                {
+                    id: 3,
+                    text: "Get a job as a web developer",
+                    completed: false
+                }
+            ];
+
+
+            function toggleState(id) {
+                console.log("toggleState called with id:", id);
+                let item = list.find(item => item.id == id);
+                if(item) {
+                    item.completed = !item.completed;
+                    console.log("item after toggle:", item);
+                    render();
+                }
+            }
+
+            // create initial ui
+            function render() {
+                const app = document.querySelector("#app");
+                app.innerHTML = "";
+
+                const listWrapper = document.createElement("div");
+                listWrapper.classList.add("list-wrapper");
+
+                listWrapper.addEventListener("click", function(event) {
+                    console.log("listWrapper clicked");
+
+                    let closestInput = event.target.closest("input[type='checkbox']");
+                    console.log("closestInput:", closestInput);
+
+                    let closestItem = event.target.closest(".list-item");
+                    console.log("closesItem id:", closestItem.getAttribute("data-id"));
+
+                    toggleState(closestItem.getAttribute("data-id"));
+
+
+                });
+
+                for(const todo of list) {
+                    const item = document.createElement("div");
+                    item.classList.add("list-item");
+                    item.setAttribute("data-id", todo.id);
+
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.checked = todo.completed;
+
+                    const text = document.createElement("div");
+                    text.textContent = todo.text;
+
+
+                    item.appendChild(checkbox);
+                    item.appendChild(text);
+                    listWrapper.appendChild(item);
+                }
+
+                app.appendChild(listWrapper);
+            }
+
+            render();
+        </script>
+    </body>
+</html>
