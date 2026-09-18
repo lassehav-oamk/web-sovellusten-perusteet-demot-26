@@ -1,6 +1,11 @@
 import Tervehdys from './w4l1/Tervehdys'
 import DateNow from './w4l1/DateNow';
 import ProductCard from './w4l2/ProductCard';
+import BadCounter from './w4l3/BadCounter';
+import Counter from './w4l3/Counter';
+import UnControlledInput from './w4l3/UnControlledInput';
+import ControlledInput from './w4l3/ControlledInput';
+import MyName from './w4l3/MyName';
 
 function App() {
 
@@ -39,6 +44,13 @@ function App() {
   
   return (
     <div>
+      <BadCounter />
+      <Counter />
+      <UnControlledInput />
+      <ControlledInput />
+      <MyName />
+
+      {/*  W4L2
       <ProductCard name="Porkkana" price={2.50} inStock={true}/>
       <ProductCard name="Peruna 1kg" price={0.80} inStock={false} />
       <ProductCard name="Omenaa 2kg" price={3.00} inStock={true}/>
@@ -53,7 +65,7 @@ function App() {
             inStock={product.inStock}
             stockQty={product.qty}
           />)
-      }
+      } */}
 
       {/* W4L1
       <div>Hello world</div>
