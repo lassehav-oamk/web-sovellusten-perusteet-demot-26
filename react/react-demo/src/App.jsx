@@ -6,49 +6,57 @@ import Counter from './w4l3/Counter';
 import UnControlledInput from './w4l3/UnControlledInput';
 import ControlledInput from './w4l3/ControlledInput';
 import MyName from './w4l3/MyName';
+import TodoList from './w5l1/TodoList';
+
 
 function App() {
 
   //const nimi = "Jaakko";
 
-  const products = [
-    {
-      id: 123,
-      name: "Porkkana",
-      price: 2.50,
-      inStock: true,
-      qty: 6
-    },
-    {
-      id: 88322,
-      name: "Peruna",
-      price: 0.8,
-      inStock: false,
-      qty: 0
-    },
-    {
-      id: 21357,
-      name: "Omena",
-      price: 3.00,
-      inStock: true,
-      qty: 50
-    },
-    {
-      id: 25436437,
-      name: "Päärynä",
-      price: 3.10,
-      inStock: false,
-      qty: 0
-    }
-  ];
+  // W4L2
+  // const products = [
+  //   {
+  //     id: 123,
+  //     name: "Porkkana",
+  //     price: 2.50,
+  //     inStock: true,
+  //     qty: 6
+  //   },
+  //   {
+  //     id: 88322,
+  //     name: "Peruna",
+  //     price: 0.8,
+  //     inStock: false,
+  //     qty: 0
+  //   },
+  //   {
+  //     id: 21357,
+  //     name: "Omena",
+  //     price: 3.00,
+  //     inStock: true,
+  //     qty: 50
+  //   },
+  //   {
+  //     id: 25436437,
+  //     name: "Päärynä",
+  //     price: 3.10,
+  //     inStock: false,
+  //     qty: 0
+  //   }
+  // ];
+
+ 
   
   return (
     <div>
+      <TodoList  />
+
+      {/* W4L3
       <BadCounter />
       <Counter />
       <UnControlledInput />
       <ControlledInput />
-      <MyName />
+      <MyName /> */}
 
       {/*  W4L2
       <ProductCard name="Porkkana" price={2.50} inStock={true}/>
