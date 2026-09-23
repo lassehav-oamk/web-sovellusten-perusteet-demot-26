@@ -1,21 +1,17 @@
 import React, { useState } from 'react'
 import TodoItem from './TodoItem'
+import AddTodo from './AddTodo';
 
 
 //export default function TodoList() {
 export default function TodoList() {
-
-    // const todos = [
-    //     { id: 1, title: 'Lue Reactin state-osio', done: true },
-    //     { id: 2, title: 'Tee Todo-harjoitus', done: false },
-    //     { id: 3, title: 'Palauta tehtävä', done: false },
-    // ];
-
     const [todos, setTodos] = useState([
         { id: 1, title: 'Lue Reactin state-osio', done: true },
         { id: 2, title: 'Tee Todo-harjoitus', done: false },
         { id: 3, title: 'Palauta tehtävä', done: false },
     ]);
+
+    const [addModeActive, setAddModeActive] = useState(false);
 
     function toggleTodo(id) {
         console.log('toggleTodo id:' + id)
@@ -33,12 +29,36 @@ export default function TodoList() {
         setTodos(nextTodos);
     }
 
+    function deleteItem(id) {
+        console.log('deleteItem id:' + id)
+        const nextTodos = todos.filter((todo) => todo.id !== id); 
+        setTodos(nextTodos); 
+    }
+
+    let output;
+    if(addModeActive) {
+        output = <AddTodo cancelButtonClick={() => setAddModeActive(false)}/>
+    } else {
+        output = 
+            <div>
+                <button onClick={() => setAddModeActive(true)}>Lisää uusi</button>
+                <ul>
+                    {todos.map((todo) => (
+                        <TodoItem 
+                            key={todo.id} 
+                            todo={todo} 
+                            doneButtonClicked={toggleTodo}
+                            deleteButtonClicked={deleteItem}
+                        />
+                    ))}
+                </ul>
+            </div>
+    }
+
     return (
-    <ul>
-        {todos.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} doneButtonClicked={toggleTodo}/>
-        ))}
-    </ul>
+        <div>
+            { output }
+        </div>
     );
 }
 

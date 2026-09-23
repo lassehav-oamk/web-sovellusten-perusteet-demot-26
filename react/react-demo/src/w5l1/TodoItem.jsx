@@ -1,4 +1,4 @@
-export default function TodoItem({ todo, doneButtonClicked }) {
+export default function TodoItem({ todo, doneButtonClicked, deleteButtonClicked }) {
 
     //const styles = { color: "red", textDecoration: "line-through" };
     const styles = {};
@@ -8,10 +8,10 @@ export default function TodoItem({ todo, doneButtonClicked }) {
 
     return (
         <li>
-        <span style={ styles }>{todo.title}</span>
-        <button onClick={() => doneButtonClicked(todo.id)}>Done</button>
-        <button>Muokkaa</button>
-        <button>Poista</button>
+            <span style={ styles }>{todo.title}</span>
+            <button onClick={() => doneButtonClicked(todo.id)}>Done</button>
+            <button>Muokkaa</button>
+            <button onClick={() => deleteButtonClicked(todo.id)  }>Poista</button>
         </li>
     );
 }
