@@ -35,9 +35,28 @@ export default function TodoList() {
         setTodos(nextTodos); 
     }
 
+    function addNewTodo(todoText) {
+        console.log('x')
+        const newTodo = {
+            id: todos.length + 1,
+            title: todoText,
+            done: false
+        }
+
+        //todos.push(newTodo); EI NÄIN
+        const newTodos = [...todos, newTodo];
+        setTodos(newTodos);
+        setAddModeActive(false);
+
+    }
+
     let output;
     if(addModeActive) {
-        output = <AddTodo cancelButtonClick={() => setAddModeActive(false)}/>
+        output = <AddTodo 
+                    cancelButtonClick={() => setAddModeActive(false)}
+                    saveTodoButtonClick={ addNewTodo }
+                    
+                />
     } else {
         output = 
             <div>
