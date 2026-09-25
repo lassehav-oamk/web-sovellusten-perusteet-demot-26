@@ -7,6 +7,7 @@ import UnControlledInput from './w4l3/UnControlledInput';
 import ControlledInput from './w4l3/ControlledInput';
 import MyName from './w4l3/MyName';
 import TodoList from './w5l1/TodoList';
+import PetStore from './w5l3/PetStore';
 
 
 function App() {
@@ -49,7 +50,10 @@ function App() {
   
   return (
     <div>
-      <TodoList  />
+      <PetStore />
+
+      {/* W5L1+L2
+      <TodoList  /> */}
 
       {/* W4L3
       <BadCounter />
