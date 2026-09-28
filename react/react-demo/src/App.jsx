@@ -9,6 +9,7 @@ import MyName from './w4l3/MyName';
 import TodoList from './w5l1/TodoList';
 import PetStore from './w5l3/PetStore';
 import TodoEffectLocalStorage from './w6l1/TodoEffectLocalStorage'
+import ClockCounter from './w6l1/ClockCounter';
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
   return (
     <div>
       <TodoEffectLocalStorage />
+      <ClockCounter />
 
       {/* W5L3
       <PetStore /> */}

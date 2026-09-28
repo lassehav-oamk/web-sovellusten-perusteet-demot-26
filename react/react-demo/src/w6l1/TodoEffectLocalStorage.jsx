@@ -14,7 +14,13 @@ export default function TodoEffectLocalStorage() {
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+    
   }, [todos]);
+
+//   useEffect(() => {
+//     document.title = todos.length + " tehtävää";
+//   }, [todos]);
+  useDocumentTitle(todos.length + ' tehtävää yhteensä')  
 
 
   function addTodo(event) {
