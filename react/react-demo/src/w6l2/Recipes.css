@@ -1,0 +1,33 @@
+.recipes-page {
+  padding: 24px;
+  text-align: left;
+}
+
+.recipes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.recipe-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.recipe-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.recipe-card div {
+  padding: 16px;
+}
+
+.recipe-card p + p {
+  margin-top: 8px;
+}

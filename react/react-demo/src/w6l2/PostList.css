@@ -1,0 +1,23 @@
+.posts-page {
+  padding: 24px;
+  text-align: left;
+}
+
+.posts-list {
+  display: grid;
+  gap: 16px;
+}
+
+.post-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.post-card p {
+  margin-top: 12px;
+}
+
+.post-tags {
+  color: var(--accent);
+}

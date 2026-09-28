@@ -8,8 +8,7 @@ import ControlledInput from './w4l3/ControlledInput';
 import MyName from './w4l3/MyName';
 import TodoList from './w5l1/TodoList';
 import PetStore from './w5l3/PetStore';
-import TodoEffectLocalStorage from './w6l1/TodoEffectLocalStorage'
-import ClockCounter from './w6l1/ClockCounter';
+import PostList from './w6l2/PostList';
 
 
 function App() {
@@ -52,8 +51,11 @@ function App() {
   
   return (
     <div>
+      <PostList />
+
+      {/* W6L1
       <TodoEffectLocalStorage />
-      <ClockCounter />
+      <ClockCounter /> */}
 
       {/* W5L3
       <PetStore /> */}
