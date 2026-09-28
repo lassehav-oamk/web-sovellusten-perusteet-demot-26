@@ -8,6 +8,7 @@ import ControlledInput from './w4l3/ControlledInput';
 import MyName from './w4l3/MyName';
 import TodoList from './w5l1/TodoList';
 import PetStore from './w5l3/PetStore';
+import TodoEffectLocalStorage from './w6l1/TodoEffectLocalStorage'
 
 
 function App() {
@@ -50,7 +51,10 @@ function App() {
   
   return (
     <div>
-      <PetStore />
+      <TodoEffectLocalStorage />
+
+      {/* W5L3
+      <PetStore /> */}
 
       {/* W5L1+L2
       <TodoList  /> */}
