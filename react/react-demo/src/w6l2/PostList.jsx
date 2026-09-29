@@ -5,6 +5,8 @@ export default function PostList() {
   // Harjoitus: korvaa nämä esimerkkipostaukset APIsta haetuilla postauksilla.
   // Hae osoitteesta https://dummyjson.com/posts useEffectin sisällä
   // käyttäen fetchiä ja async/awaitia. Vastauksen lista on data.posts.
+
+  
   const posts = [
     {
       id: 1,

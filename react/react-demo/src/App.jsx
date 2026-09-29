@@ -51,7 +51,7 @@ function App() {
   
   return (
     <div>
-      <PostList />
+      <Recipes />
 
       {/* W6L1
       <TodoEffectLocalStorage />
