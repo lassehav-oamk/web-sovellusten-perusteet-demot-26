@@ -9,6 +9,7 @@ import MyName from './w4l3/MyName';
 import TodoList from './w5l1/TodoList';
 import PetStore from './w5l3/PetStore';
 import PostList from './w6l2/PostList';
+import Recipes from './w6l2/Recipes'
 
 
 function App() {
