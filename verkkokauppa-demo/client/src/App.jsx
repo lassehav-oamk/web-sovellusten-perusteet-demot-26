@@ -18,6 +18,8 @@ export default function App() {
   const [categoryId, setCategoryId] = useState(null); 
   const [productId, setProductId] = useState(null); 
   const [cart, setCart] = useState([]); 
+  const [invoice, setInvoice] = useState(null); 
+  const [sending, setSending] = useState(false); 
 
   // B. Lataa kategoriat ja tuotteet 
   useEffect(() => { 
@@ -93,10 +95,43 @@ export default function App() {
     setCart((current) => current.filter((item) => item.id !== id)); 
   } 
 
-  function previewOrder(customer) { 
-    setNotice(`Lomake toimii: ${customer.customerName}, ${customer.email}. ` 
-      + 'Tilausta ei vielä lähetetty.'); 
+  async function placeOrder(customer) { 
+    if (sending || cart.length === 0) return; 
+    setSending(true); 
+    setError(''); 
+    try { 
+      const order = await api('/orders', { 
+        method: 'POST', 
+        body: JSON.stringify({ 
+          ...customer, 
+          items: cart.map((item) => ({ 
+            productId: item.id, quantity: item.quantity, 
+          })), 
+        }), 
+      }); 
+
+      setCart([]); 
+      showInvoice(order); 
+
+    } catch (err) { 
+      setError(err.message); 
+      return; 
+    } finally { 
+      setSending(false); 
+    } 
+
+    // Tilaus on jo tallennettu. Listan päivitys on erillinen haku. 
+    try { 
+      setProducts(await api('/products')); 
+    } catch { 
+      setNotice('Tilaus tallennettiin, mutta tuotelista ei päivittynyt.'); 
+    } 
   }
+
+  function showInvoice(order) { 
+    setInvoice(order); 
+    navigate('invoice'); 
+  } 
 
    
 
@@ -122,7 +157,10 @@ export default function App() {
       onAdd={addToCart} onBack={() => navigate('products')} />;
   }
   else if (view === 'cart') { 
-    content = <Cart cart={cart} onQuantity={changeQuantity} onRemove={removeFromCart} onOrder={previewOrder} sending={false} />; 
+    content = <Cart cart={cart} onQuantity={changeQuantity} onRemove={removeFromCart} onOrder={placeOrder} sending={false} />; 
+  } 
+  else if (view === 'invoice') { 
+    content = <Invoice order={invoice} />; 
   } else { 
     content = <Home categories={categories} onSelectCategory={selectCategory} />; 
   } 
@@ -135,10 +173,10 @@ export default function App() {
       <header className="no-print"> 
         <p className="brand">Pieni verkkokauppa</p> 
         
-         <nav aria-label="Päävalikko"> 
-          <button onClick={() => navigate('home')}>Etusivu</button> 
-          <button onClick={() => selectCategory(null)}>Tuotteet</button>
-          <button onClick={() => navigate('cart')}>Ostoskori ({count})</button> 
+        <nav aria-label="Päävalikko"> 
+          <button disabled={sending} onClick={() => navigate('home')}>Etusivu</button> 
+          <button disabled={sending} onClick={() => selectCategory(null)}>Tuotteet</button> 
+          <button disabled={sending} onClick={() => navigate('cart')}>Ostoskori ({count})</button> 
         </nav> 
 
         <p>Opetusdemo: käytä vain keksittyjä tietoja. Ei oikeita ostoksia.</p> 

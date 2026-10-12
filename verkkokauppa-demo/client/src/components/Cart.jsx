@@ -20,8 +20,7 @@ export default function Cart({
   return ( 
     <section> 
       <h1>Ostoskori</h1> 
-      <p>Harjoitusvaihe: lomake ei vielä lähetä tilausta.</p> 
-
+      
       <form onSubmit={submit}> 
         <fieldset disabled={sending}> 
           <legend>Tuotteet ja tilaajan tiedot</legend> 
@@ -57,7 +56,7 @@ export default function Cart({
           <input id="email" type="email" required maxLength="254" 
             value={email} onChange={(event) => setEmail(event.target.value)} /> 
           <button type="submit"> 
-            {sending ? 'Tallennetaan...' : 'Tarkista lomake (ei vielä tilausta)'} 
+            {sending ? 'Tallennetaan...' : 'Tilaa ja näytä demolasku'} 
           </button> 
 
         </fieldset> 
